@@ -1,7 +1,13 @@
-x = int(input())
-y = int(input())
-if x > 0 and y > 0: print('1')
-elif x < 0 and y > 0: print('2')
-elif x < 0 and y < 0: print('3')
-elif x > 0 and y < 0: print('4')
-else: print('-1')
+def solve(a: list) -> int:
+    result = 0
+    for value in a:
+        result += value
+    return result
+
+
+a = list()
+a.append(1)
+a.append(2)
+a.append(3)
+for value in a:
+    print(value)
