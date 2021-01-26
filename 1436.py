@@ -33,15 +33,25 @@
 9666
 10666
 '''
+
+def firstAnswer():
+    n = int(input())
+    result = 666
+    while True:
+        result_str = str(result)
+        for idx in range(len(result_str)-2):
+            if result_str[idx] == result_str[idx+1] == result_str[idx+2] == '6': 
+                n -= 1
+                if n == 0: 
+                    print(result_str)
+                    exit()
+                break
+        result += 1
+
+# 간결한 답지
 n = int(input())
-result = 666
-while True:
-    result_str = str(result)
-    for idx in range(len(result_str)-2):
-        if result_str[idx] == result_str[idx+1] == result_str[idx+2] == '6': 
-            n -= 1
-            if n == 0: 
-                print(result_str)
-                exit()
-            break
+result = 665
+while n:
     result += 1
+    if '666' in str(result): n -= 1
+print(result)
