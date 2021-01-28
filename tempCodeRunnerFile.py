@@ -1,7 +1,8 @@
-queue = [0, 1]
-n = int(input()) # 공백 기준 잘라서 대입
-if n <= 2: print(queue[n])
-for _ in range(n-1):
-    print(queue)
-    print(queue)
-print(queue.pop())
+n = int(input())
+result = []
+for _ in range(n):
+    age, name = input().split()
+    result.append([age, name])
+result.sort(key=lambda age: int(age[0]))
+for value in result:
+    print('%s %s' %(value[0], value[1]))
