@@ -1,9 +1,8 @@
 mem_arr = [0 for _ in range(101)]
-'''
 mem_arr[1] = mem_arr[2] = mem_arr[3] = 1
 mem_arr[4] = mem_arr[5] = 2
 mem_arr[6] = 3 
-'''
+
 def p(n):
     if n <= 3: return 1
     if n <= 5: return 2

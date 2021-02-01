@@ -1,13 +1,9 @@
-def solve(a: list) -> int:
-    result = 0
-    for value in a:
-        result += value
-    return result
+n = int(input())
+arr = []
+for _ in range(n):
+    x, y = map(int, (input().split()))
+    arr.append([x, y])
 
-
-a = list()
-a.append(1)
-a.append(2)
-a.append(3)
-for value in a:
-    print(value)
+arr.sort(key=lambda x: x[0])
+arr.remove(3)
+print(arr)

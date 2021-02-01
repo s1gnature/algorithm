@@ -52,19 +52,9 @@ def find_common3(arr):
             if value > result:
                 flag = 1
                 result = value
-        '''      
-        if value > result:
-            result = value
-            curr_max_count = count_value
-            flag = 0
-        else: continue
-        if count_value == curr_max_count and flag == 1:
-            continue
-        elif count_value == curr_max_count:
-            flag = 1
-            result = value
-        '''
     return result
+
+
 
 import sys
 from collections import Counter

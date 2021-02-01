@@ -26,6 +26,7 @@ n=27 일때 n=9임
 4,5,6일때 빈칸
 '''
 n = int(input())+1
+
 for y in range(1, n):
     for x in range(1, n):
         # print('%s %s' %(x,y))

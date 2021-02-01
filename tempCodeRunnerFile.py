@@ -1,1 +1,2 @@
-u
+
+    arr.append([x, y])
