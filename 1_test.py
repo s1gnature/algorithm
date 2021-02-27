@@ -1,5 +1,14 @@
-word = 'RDRRDR'
-# word.find('RR')
-# print(word.find('RR'))
-word = word.replace('RR', '')
-print(word)
+import sys
+
+data = sys.stdin.readline().rstrip()
+
+print(f"isreal? {data}")
+
+def func():
+    data = 'abc'
+    print(data)
+
+    data = 'zxkvlsadf'
+    print(data)
+
+func()
