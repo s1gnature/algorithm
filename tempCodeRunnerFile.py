@@ -1,1 +1,1 @@
-l
+    print(arr)
