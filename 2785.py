@@ -1,11 +1,11 @@
 import sys
+readl = sys.stdin.readline
 
-def read(): return sys.stdin.readline()
-n = read()
-arr = list(map(int, read().split()))
+n = int(readl())
+arr = list(map(int, readl().split()))
 arr.sort()
 minChainCnt = 0
-arrCnt = len(arr)
+arrCnt = n
 for minLenChain in arr:
     if (arrCnt - minLenChain) < 2:
         minChainCnt += (arrCnt - 1)
