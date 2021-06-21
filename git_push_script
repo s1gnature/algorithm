@@ -1,0 +1,7 @@
+if [ $1-z ]; then
+    echo "[Error] Write Down Commit Msg"
+else
+    git add .
+    git commit -m "$1"
+    git push origin master
+fi
