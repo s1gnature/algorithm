@@ -1,0 +1,34 @@
+import Foundation
+
+let tc1_nums = [1,2,3,4]
+let tc2_nums = [1,2,7,6,4]
+
+
+func isPrime(num: Int) -> Bool {
+    for value in 2...Int(sqrt(Double(num))) {
+        if num % value == 0 { return false }
+    }
+    return true
+}
+func sumOfThree(arr: [Int]) -> [Int] {
+    var resultArr = [Int]()
+    let arrLen = arr.count
+    for idx1 in 0..<arrLen-2 {
+        for idx2 in idx1+1..<arrLen-1 {
+            for idx3 in idx2+1..<arrLen {
+                resultArr.append(arr[idx1] + arr[idx2] + arr[idx3])
+            }
+        }
+    }
+    return resultArr
+}
+func solution(_ nums:[Int]) -> Int {
+    var resultCnt = 0
+    var sumOfThreeArr = sumOfThree(arr: nums)
+    sumOfThreeArr.forEach {
+        if isPrime(num: $0) { resultCnt += 1}
+    }
+    return resultCnt
+}
+
+print(solution(tc2_nums))
