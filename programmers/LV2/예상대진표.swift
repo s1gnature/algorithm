@@ -17,7 +17,6 @@ func solution(_ n:Int, _ a:Int, _ b:Int) -> Int
         if b != 1 { b /= 2 }
         answer += 1
     }
-    // return answer
 }
 
 print(solution(8, 4, 5))

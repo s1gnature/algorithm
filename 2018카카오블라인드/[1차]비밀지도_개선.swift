@@ -16,7 +16,6 @@ func solution(_ n:Int, _ arr1:[Int], _ arr2:[Int]) -> [String] {
         print(binaryString)
         return binaryString.reduce("") { $0 + ($1 == "1" ? "#": " ")}
     }
-    
 }
 
 print(solution(tc1_n, tc1_arr1, tc1_arr2) == tc1_result)

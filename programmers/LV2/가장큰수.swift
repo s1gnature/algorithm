@@ -32,7 +32,7 @@ import Foundation
 
 Solution
 그냥 sort 할때부터 문자열에 숫자를 앞 뒤로 붙여보고 오름차순으로 sort 해서 array를 만들고
-각 원소 합쳐서 리턴. 다만 [0,0,0] 같은 경우는 000 으로 나오니까 Int로 한번 걸러서 리턴
+각 원소 합쳐서 리턴. 다만 [0,0,0] 같은 경우는 000 으로 나오니까 한번 거르고 리턴
 */
 func solution(_ numbers:[Int]) -> String {
     var numbers = numbers.sorted{ Int(String($0) + String($1))! > Int(String($1) + String($0))! }

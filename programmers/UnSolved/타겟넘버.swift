@@ -3,7 +3,7 @@ import Foundation
 func solution(_ numbers:[Int], _ target:Int) -> Int {
     let sum = numbers.reduce(0){ $0 + $1 }
     var resultCnt = 0
-    var permutationArr = [Int]()
+
     var checkList = Array(repeating: 0, count: numbers.count)
     var resultString = ""
 

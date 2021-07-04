@@ -1,4 +1,5 @@
 import Foundation
+
 let tc1_result = ["#####","# # #", "### #", "#  ##", "#####"]
 let tc1_n = 5
 let tc1_arr1 = [9, 20, 28, 18, 11]
