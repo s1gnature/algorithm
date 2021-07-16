@@ -5,7 +5,7 @@ func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
 
     for arr1row in arr1 {
         var matrixSum = [Int]()
-        for arr2Idx in 0..<arr2.count {
+        for arr2Idx in 0..<arr2[0].count {
             var sum = 0
             for rowIdx in 0..<arr1row.count {
                 sum += arr1row[rowIdx] * arr2[rowIdx][arr2Idx]

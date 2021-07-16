@@ -25,7 +25,6 @@ func solution(_ msg:String) -> [Int] {
             cnt = 1
         }
     }
-    print(dic)
     return idxArr
 }
 
