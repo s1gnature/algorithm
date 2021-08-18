@@ -5,14 +5,24 @@ func solution(_ scores:[[Int]]) -> String {
     for column in 0..<scores.count {
         var max = 0
         var min = 100
+        var isOnlyMax = true
+        var isOnlyMin = true
         var sum = 0
         for row in 0..<scores.count {
-            if max < scores[row][column] { max = scores[row][column] }
-            else if min > scores[row][column] { min = scores[row][column] }
+            if max < scores[row][column] {
+                max = scores[row][column]
+                isOnlyMax = true
+            }
+            if min > scores[row][column] {
+                min = scores[row][column]
+                isOnlyMin = true
+            }
+            if max == scores[row][column] { isOnlyMax = false }
+            if min == scores[row][column] { isOnlyMin = false }
             sum += scores[row][column]
         }
-        if max == scores[column][column] { result += getScore(Double(sum - max) / Double(scores.count-1)) }
-        else if min == scores[column][column] { result += getScore(Double(sum - min) / Double(scores.count-1)) }
+        if max == scores[column][column] && isOnlyMax { result += getScore(Double(sum - max) / Double(scores.count-1)) }
+        else if min == scores[column][column] && isOnlyMin { result += getScore(Double(sum - min) / Double(scores.count-1)) }
         else { result += getScore(Double(sum) / Double(scores.count))}
     }
     return result
@@ -27,5 +37,4 @@ func getScore(_ avg: Double) -> String {
         default: return "F"
     }
 }
-
-print(solution([[100,90,98,88,65],[50,45,99,85,77],[47,88,95,80,67],[61,57,100,80,65],[24,90,94,75,65]]))
+print(solution([[75, 50, 100], [75, 100, 20], [100, 100, 20]]))
