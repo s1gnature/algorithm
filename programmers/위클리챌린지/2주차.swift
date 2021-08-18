@@ -13,12 +13,13 @@ func solution(_ scores:[[Int]]) -> String {
                 max = scores[row][column]
                 isOnlyMax = true
             }
+            else if max == scores[row][column] { isOnlyMax = false }
+            
             if min > scores[row][column] {
                 min = scores[row][column]
                 isOnlyMin = true
             }
-            if max == scores[row][column] { isOnlyMax = false }
-            if min == scores[row][column] { isOnlyMin = false }
+            else if min == scores[row][column] { isOnlyMin = false }
             sum += scores[row][column]
         }
         if max == scores[column][column] && isOnlyMax { result += getScore(Double(sum - max) / Double(scores.count-1)) }
