@@ -3,6 +3,7 @@ import Foundation
 let tc1 = [3, 0, 6, 1, 5] // result = 3
 let tc2 = [4, 0, 6, 1, 5] // result = 3
 let tc3 = [10, 11, 12, 13] // result = 4
+
 func solution(_ citations:[Int]) -> Int {
     let citations = citations.sorted(by: >)
     var hIndex = 0
@@ -23,4 +24,6 @@ func solution(_ citations:[Int]) -> Int {
 }
 
 print(solution(tc1))
+print(solution(tc2))
+print(solution(tc3))
 

@@ -41,4 +41,4 @@ func solution(_ numbers:[Int]) -> String {
 }
 
 print(solution([0, 0]))
-
+print(String("12") > String("212"))
