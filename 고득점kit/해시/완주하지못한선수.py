@@ -1,8 +1,10 @@
 import sys
 
 def solution(participant, completion):
-    for value in completion:
-        if value in participant: participant.remove(value)
-    return participant[0]
+    result = set(participant) - set(completion)
+    if len(result) == 0:
+        for value in completion:
+            if participant.count(value) - completion.count(value) == 1: return value
+    else: return list(result)[0]
 
 print(solution(["leo", "kiki", "eden"], ["eden", "kiki"]))
