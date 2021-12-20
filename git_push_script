@@ -1,4 +1,4 @@
-if [ $1-z ]; then
+if [$1-z]; then
     echo "[Error] Write Down Commit Msg"
 else
     git add .
