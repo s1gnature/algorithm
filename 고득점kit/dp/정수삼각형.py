@@ -1,7 +1,6 @@
 import sys
 
 def solution(triangle):
-    answer = 0
     sumOfTriangle = triangle
     for line in range(1, len(sumOfTriangle)):
         sumOfTriangle[line][0] += sumOfTriangle[line-1][0]

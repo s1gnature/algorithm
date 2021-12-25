@@ -16,6 +16,7 @@ def solution(clothes):
 
     for cnt in cnt_arr:
         answer *= (cnt + 1)
+        
     return answer - 1
 
 tc1 = [["yellowhat", "headgear"], ["bluesunglasses", "eyewear"], ["green_turban", "headgear"]]
