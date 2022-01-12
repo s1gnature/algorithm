@@ -19,4 +19,8 @@ func solution(n: Int) {
     }
 }
 
-print(solution(n: 27))
+solution(n: 27)
+
+
+
+
