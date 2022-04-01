@@ -1,0 +1,51 @@
+import Foundation
+
+func solution(_ arr:[[Int]]) -> [Int] {
+    var zeroCnt = 0
+    var oneCnt = 0
+    
+    quadZip(arr, x: 0, y: 0, len: arr.count, zero: &zeroCnt, one: &oneCnt)
+    return [zeroCnt, oneCnt]
+}
+
+func quadZip(_ input: [[Int]], x: Int, y: Int, len: Int, zero: inout Int, one: inout Int) {
+    if len == 1 {
+        input[y][x] == 0 ? (zero += 1) : (one += 1)
+        return
+    }
+    
+    let arr: [[Int]] = {
+        var arr = [[Int]]()
+        input[y..<y+len].forEach {
+            arr.append(Array($0[x..<x+len]))
+        }
+        return arr
+    }()
+
+    
+    if let value = zipTo(arr) {
+        value == 0 ? (zero += 1) : (one += 1)
+    } else {
+        quadZip(input, x: x, y: y, len: len/2, zero: &zero, one: &one)
+        quadZip(input, x: x+len/2, y: y, len: len/2, zero: &zero, one: &one)
+        quadZip(input, x: x, y: y+len/2, len: len/2, zero: &zero, one: &one)
+        quadZip(input, x: x+len/2, y: y+len/2, len: len/2, zero: &zero, one: &one)
+    }
+}
+
+func zipTo(_ input: [[Int]]) -> Int? {
+    let len = input.count * input.count
+    var zeroCnt = 0
+    var oneCnt = 0
+    
+    input.forEach {
+        $0.forEach {
+            if $0 == 0 { zeroCnt += 1 }
+            else if $0 == 1 { oneCnt += 1 }
+        }
+    }
+    
+    if len == zeroCnt { return 0 }
+    else if len == oneCnt { return 1 }
+    else { return nil }
+}
