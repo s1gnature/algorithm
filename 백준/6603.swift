@@ -1,3 +1,4 @@
+// [6603번] 로또
 import Foundation
 
 while true {
