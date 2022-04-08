@@ -11,16 +11,20 @@ var dic: [Int: Bool] = {
     }
     return dic
 }()
+var res = max - min + 1
 var pivot = 2
 while true {
     let powPivot = pivot*pivot
     if powPivot > max { break }
     let multiplier = (min / powPivot) == 0 ? 1 : (min / powPivot)
     for divisor in stride(from: powPivot*multiplier, to: max+1, by: +powPivot) {
-        if dic[divisor] != nil {
-            dic[divisor] = false
+        if let value = dic[divisor] {
+            if value {
+                dic[divisor] = false
+                res -= 1
+            }
         }
     }
     pivot += 1
 }
-print(dic.filter{ $0.value == true }.count)
+print(res)
