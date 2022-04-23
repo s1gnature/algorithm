@@ -1,3 +1,4 @@
+// [11279번] 최대 힙
 import Foundation
 
 // Node = (index, value)
@@ -73,5 +74,14 @@ struct MaxHeap {
                 break
             }
         }
+    }
+}
+
+var maxHeap = MaxHeap()
+(0..<Int(readLine()!)!).forEach { _ in
+    let n = Int(readLine()!)!
+    if n == 0 { print(maxHeap.remove() ?? 0) }
+    else {
+        maxHeap.insert(value: n)
     }
 }
