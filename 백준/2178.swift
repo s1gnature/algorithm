@@ -1,4 +1,4 @@
-// [2178] 미로탐색
+// [2178번] 미로탐색
 import Foundation
 
 let nm = readLine()!.split(separator: " ").map{ Int(String($0))! }
